@@ -1,3 +1,4 @@
+
 import pytest
 from search import graph
 import networkx as nx
@@ -41,3 +42,9 @@ def test_bfs_path_DNE():
     non_path=g.bfs('D','G')
     assert non_path == None
 
+def test_node_not_in_graph():
+    g=graph.Graph('test/dummy.adjlist')
+    with pytest.raises(ValueError):
+        g.bfs('Y')
+
+        

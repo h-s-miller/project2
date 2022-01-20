@@ -22,6 +22,16 @@ class Graph:
 
         """
 
+        #check edge cases
+        # case: start node not in the graph, return error
+        if start not in self.graph.nodes:
+            raise ValueError("Start node not in graph")
+
+        # case: end node not in the graph, return error
+        if (end != None) and (end not in self.graph.nodes):
+            raise ValueError("End node not in graph")
+        
+        
         visited=[]
         queue= []
 
